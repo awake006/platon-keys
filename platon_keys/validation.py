@@ -4,12 +4,14 @@ from eth_utils import (
     encode_hex,
     is_bytes,
     is_integer,
-    ValidationError,
 )
 from eth_utils.toolz import curry
 
 from platon_keys.constants import (
     SECPK1_N,
+)
+from platon_keys.exceptions import (
+    ValidationError,
 )
 
 

@@ -15,9 +15,6 @@ from typing import (    # noqa: F401
     TYPE_CHECKING,
 )
 
-from eth_typing import (
-    ChecksumAddress,
-)
 from eth_utils import (
     big_endian_to_int,
     encode_hex,
@@ -27,13 +24,13 @@ from eth_utils import (
     keccak,
     to_checksum_address,
     to_normalized_address,
-    ValidationError,
-
+)
+from eth_utils.typing import (
+    ChecksumAddress,
 )
 
 from platon_keys.utils.address import (
-    public_key_bytes_to_address,
-    compressed_public_key_bytes_to_address
+    public_key_bytes_to_address, compressed_public_key_bytes_to_address
 )
 from platon_keys.utils.numeric import (
     int_to_byte,
@@ -44,6 +41,7 @@ from platon_keys.utils.padding import (
 
 from platon_keys.exceptions import (
     BadSignature,
+    ValidationError,
 )
 from platon_keys.validation import (
     validate_private_key_bytes,
@@ -243,8 +241,7 @@ class PublicKey(BaseKey, LazyBackend):
     def to_canonical_address(self) -> bytes:
         return public_key_bytes_to_address(self.to_bytes())
 
-    # platon address conversions
-
+    # PlatON address conversions
     def to_bech32_address(self):
         return compressed_public_key_bytes_to_address(self.to_compressed_bytes())
 

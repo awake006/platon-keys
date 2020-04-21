@@ -7,18 +7,14 @@ from setuptools import (
 
 
 deps = {
-    'coincurve': [
-        'coincurve>=7.0.0,<13.0.0',
-    ],
     'platon-keys': [
         "eth-utils>=1.3.0,<2.0.0",
-        "eth-typing>=2.2.1,<3.0.0",
     ],
     'test': [
         "asn1tools>=0.146.2,<0.147",
         "pyasn1>=0.4.5,<0.5",
         'pytest==3.2.2',
-        'hypothesis>=4.56.1, <5.0.0',
+        'hypothesis==3.30.0',
         "eth-hash[pysha3];implementation_name=='cpython'",
         "eth-hash[pycryptodome];implementation_name=='pypy'",
     ],
@@ -44,7 +40,7 @@ setup(
     name='platon-keys',
     # *IMPORTANT*: Don't manually change the version here. Use the 'bumpversion' utility.
     version='0.1.0',
-    description="""Common API for PlatON key operations.""",
+    description="""Common API for Ethereum key operations.""",
     long_description_markdown_filename='README.md',
     author='Piper Merriam',
     author_email='hietel366435@gmail.com',
@@ -57,7 +53,7 @@ setup(
     license="MIT",
     zip_safe=False,
     package_data={'platon-keys': ['py.typed']},
-    keywords='ethereum',
+    keywords='platon',
     packages=find_packages(exclude=["tests", "tests.*"]),
     classifiers=[
         'Development Status :: 4 - Beta',

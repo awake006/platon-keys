@@ -1,10 +1,5 @@
 from typing import (Any, Union, Type)  # noqa: F401
 
-from eth_utils import (
-    is_string,
-    ValidationError,
-)
-
 from platon_keys.datatypes import (
     BaseSignature,
     LazyBackend,
@@ -12,6 +7,9 @@ from platon_keys.datatypes import (
     PublicKey,
     PrivateKey,
     Signature,
+)
+from platon_keys.exceptions import (
+    ValidationError,
 )
 from platon_keys.validation import (
     validate_message_hash,
