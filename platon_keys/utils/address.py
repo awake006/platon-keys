@@ -1,15 +1,15 @@
 from eth_utils import (
     keccak,
 )
-from platon_keys.utils.bech32 import to_wit, encode
+from platon_keys.utils.bech32 import encode
 
-HRP = "plt"
+HRP = "lac"
 
 
 def public_key_bytes_to_address(public_key_bytes: bytes) -> bytes:
     return keccak(public_key_bytes)[-20:]
 
 
-def compressed_public_key_bytes_to_address(compressed_public_key_bytes: bytes) -> str:
-    witver, witprog = to_wit(compressed_public_key_bytes)
-    return encode(HRP, witver, witprog)
+def address_bytes_to_address(address_bytes: bytes) -> str:
+    witprog = list(address_bytes)
+    return encode(HRP, witprog)

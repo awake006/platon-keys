@@ -40,9 +40,9 @@ setup(
     name='platon-keys',
     # *IMPORTANT*: Don't manually change the version here. Use the 'bumpversion' utility.
     version='0.1.0',
-    description="""Common API for Ethereum key operations.""",
+    description="""Common API for PlatON key operations.""",
     long_description_markdown_filename='README.md',
-    author='Piper Merriam',
+    author='awake006',
     author_email='hietel366435@gmail.com',
     url='https://github.com/awake006/platon-keys',
     include_package_data=True,

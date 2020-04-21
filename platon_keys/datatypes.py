@@ -30,7 +30,7 @@ from eth_utils.typing import (
 )
 
 from platon_keys.utils.address import (
-    public_key_bytes_to_address, compressed_public_key_bytes_to_address
+    public_key_bytes_to_address, address_bytes_to_address
 )
 from platon_keys.utils.numeric import (
     int_to_byte,
@@ -243,7 +243,7 @@ class PublicKey(BaseKey, LazyBackend):
 
     # PlatON address conversions
     def to_bech32_address(self):
-        return compressed_public_key_bytes_to_address(self.to_compressed_bytes())
+        return address_bytes_to_address(self.to_canonical_address())
 
 
 class PrivateKey(BaseKey, LazyBackend):
