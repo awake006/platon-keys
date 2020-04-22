@@ -87,7 +87,7 @@ def decode(hrp: str, addr: str) -> Union[Tuple[None, None], Tuple[int, List[int]
     if hrpgot != hrp:
         return None, None
     assert data is not None
-    decoded = convertbits(data[1:], 5, 8, False)
+    decoded = convertbits(data[:], 5, 8, False)
     if decoded is None or len(decoded) < 2 or len(decoded) > 40:
         return None, None
     if data[0] > 16:
