@@ -3,7 +3,8 @@ from eth_utils import (
 )
 from platon_keys.utils.bech32 import encode
 
-HRP = "lac"
+MIANNETHRP = "lat"
+TESTNETHRP = "lax"
 
 
 def public_key_bytes_to_address(public_key_bytes: bytes) -> bytes:
@@ -12,4 +13,9 @@ def public_key_bytes_to_address(public_key_bytes: bytes) -> bytes:
 
 def address_bytes_to_address(address_bytes: bytes) -> str:
     witprog = list(address_bytes)
-    return encode(HRP, witprog)
+    return encode(MIANNETHRP, witprog)
+
+
+def address_bytes_to_test_address(address_bytes: bytes) -> str:
+    witprog = list(address_bytes)
+    return encode(TESTNETHRP, witprog)
