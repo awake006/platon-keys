@@ -90,8 +90,8 @@ def decode(hrp: str, addr: str) -> Union[Tuple[None, None], Tuple[int, List[int]
     decoded = convertbits(data[:], 5, 8, False)
     if decoded is None or len(decoded) < 2 or len(decoded) > 40:
         return None, None
-    if data[0] > 16:
-        return None, None
+    # if data[0] > 16:
+    #     return None, None
     if data[0] == 0 and len(decoded) != 20 and len(decoded) != 32:
         return None, None
     return data[0], decoded
@@ -106,3 +106,4 @@ def encode(hrp: str, witprog: Iterable[int]) -> Optional[str]:
     if decode(hrp, ret) == (None, None):
         return None
     return ret
+
